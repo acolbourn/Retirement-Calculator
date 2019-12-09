@@ -1,0 +1,123 @@
+body {
+  background-color: #1a2229;
+  color: white;
+  /* Fallback color */
+  color: rgba(255, 255, 255, .75);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+}
+
+/* Split page into 3 flexible sections (header, footer, and main calculator) and
+fill remaining page space not used by calculator with header/footer */
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  font-size: 0.9rem;
+  color: white;
+  padding: 1rem 1rem 0.4rem;
+  flex: 1;
+}
+
+.fullPageContainer {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+footer {
+  padding: 1rem;
+  color: white;
+  flex: 1;
+  align-items: center;
+  line-height: 2.5;
+}
+
+.columnBorder {
+  border-radius: .3rem;
+  background-color: #333;
+}
+
+/* D3 Bar Chart Styles */
+.barChart {
+  text-align: center;
+}
+
+.axis {
+  font-size: 17px;
+  fill: rgba(255, 255, 255, .75);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.xLabel, .legendLabel {
+  font-size: 18px;
+  fill: rgba(255, 255, 255, .75);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.axis path, .axis line {
+  fill: rgba(255, 255, 255, .75);
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar:hover {
+  opacity: 0.7;
+}
+
+.barTooltip {
+  position: absolute;
+  text-align: center;
+  width: 210px;
+  height: 122px;
+  padding: 2px;
+  font: 18px;
+  font-family: 'Montserrat', sans-serif;
+  background: lightsteelblue;
+  border: 0;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Results Section */
+.card {
+  background-color: #222;
+}
+
+.resultTitle {
+  font-size: 1.4rem;
+}
+
+.resultValue {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+}
+
+.totalContributions {
+  color: #4086AA;
+}
+
+.interestEarned {
+  color: #91C3DC;
+}
+
+.finalTotalValue {
+  color: green;
+}
+
+.returnMultiplier {
+  color: yellow;
+}
+
+/* Footer Section */
+.footer-link {
+  margin: 20px 10px;
+  color: white;
+}

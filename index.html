@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Retirement Calculator</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/d17a5336b4.js" crossorigin="anonymous"></script>
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="fullPageContainer">
+
+    <!-- Header Section -->
+    <header class="section">
+      <h1>Retirement Calculator</h1>
+    </header>
+
+    <!-- Calculator Body Section -->
+    <div class="container-fluid calculatorSection section">
+      <div class="row">
+        <!-- Form Panel -->
+        <div class="col-md-3 m-2 p-4 columnBorder inputForm">
+          <form class="needs-validation">
+
+            <div class="form-group mb-3">
+              <label for="currentAge">Current Age</label>
+              <input type="number" class="form-control" id="currentAge" value="30" step="1" min="0" max="200" required>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="retirementAge">Retirement Age</label>
+              <input type="number" class="form-control" id="retirementAge" value="65" step="1" min="0" max="200" required>
+            </div>
+
+            <label for="startingAmount">Starting Amount</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="number" class="form-control" id="startingAmount" min="0" max="9999999" step="1" value="10000" aria-label="Starting Amount" required>
+            </div>
+
+            <label for="monthlyContribution">Monthly Contributions</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="number" class="form-control" id="monthlyContribution" min="0" max="9999999" step="1" value="1000" aria-label="Monthly Contribution" required>
+            </div>
+
+            <label for="interestRate">Interest Rate/Year</label>
+            <div class="input-group mb-4">
+              <input type="number" class="form-control" id="interestRate" min="0" max="25" step="0.1" value="7" aria-label="Interest Rate Per Year" data-toggle="tooltip" data-placement="right" title="6-7% is a safe bet but some sources suggest as high as 11.9%.
+                    Note, this calculator compounds monthly." required>
+              <div class="input-group-append">
+                <span class="input-group-text">%</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-outline-light btn-lg btn-block" id="calculateBtn">Calculate</button>
+          </form>
+        </div>
+
+        <!-- Bar chart panel, populated by index.js -->
+        <div class="col-md m-2 p-3 columnBorder barChart">
+        </div>
+      </div>
+
+      <div class="row results">
+        <div class="col-md m-2 p-3 columnBorder">
+          <div class="row">
+            <div class="col-md m-2 p-3">
+              <h2 class="resultTitle">Contributions</h2>
+              <p class="resultValue totalContributions">0</p>
+            </div>
+            <div class="col-md m-2 p-3">
+              <h2 class="resultTitle">Free Money</h2>
+              <p class="resultValue interestEarned">0</p>
+            </div>
+            <div class="col-md m-2 p-3">
+              <h2 class="resultTitle">Final Value</h2>
+              <p class="resultValue finalTotalValue">0</p>
+            </div>
+            <div class="col-md m-2 p-3">
+              <h2 class="resultTitle">Return</h2>
+              <p class="resultValue returnMultiplier">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="section">
+      <div class="container-fluid">
+        <!-- Links left blank, for example purposes only -->
+        <a class="footer-link" href="#"><i class="fab fa-twitter"></i></a>
+        <a class="footer-link" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="footer-link" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="footer-link" href="#"><i class="fas fa-envelope"></i></a>
+        <p>© Copyright 2019 Alex Colbourn</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+<!-- Javascript/D3 CDNs -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- Link to Javascript sheet -->
+<script src="index.js" charset="utf-8"></script>
+
+</html>
