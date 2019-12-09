@@ -1,5 +1,8 @@
 # Retirement-Calculator
-A visual retirement calculator made with D3, Javascript, HTML, and CSS.  It provides an easy way to visualize the power of compounding interest and demonstrates why the power of time is so critical in retirement planning.  The design is intended primarily as a motivational tool to encourage people to start saving early.  As such, the interface is designed to be as simple as possible.  Factors such as tax implications, inflation, pensions, social security, and other complex considerations are not included. 
+A live version of the site can be found here:
+https://affectionate-bhabha-988fc4.netlify.com
+
+This site is a visual retirement calculator made with D3, Javascript, HTML, and CSS.  It provides an easy way to visualize the power of compounding interest and demonstrates why the power of time is so critical in retirement planning.  The design is intended primarily as a motivational tool to encourage people to start saving early.  As such, the interface is designed to be as simple as possible.  Factors such as tax implications, inflation, pensions, social security, and other complex considerations are not included. 
 
 # Getting Started
 The calculator has only five available options that were carefully selected to yield an accurate ballpark estimate of interest growth with as little preliminary knowledge as possible.  The user simply inputs their current age, retirement age, starting investment, monthly contributions, and interest rate. When the calculate button is pressed, a bar graph is generated showing the growth over time.  By clicking/hovering on a year the user can see the results at various points in time.  In addition, a summary of the final key results is displayed at the bottom of the page.   
