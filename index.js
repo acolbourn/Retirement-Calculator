@@ -380,8 +380,8 @@ function validateForm(form) {
   // Validate the Form
   var isValid = true;
   // Retrieve user variables from form
-  var currentAge = $("#currentAge").val();
-  var retirementAge = $("#retirementAge").val();
+  var currentAge = Number($("#currentAge").val());
+  var retirementAge = Number($("#retirementAge").val());
   // Check for validity and alert user
   if (retirementAge < currentAge) {
     alert("Retirement age must be greater than current age.");
